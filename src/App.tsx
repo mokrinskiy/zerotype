@@ -3,15 +3,15 @@ import NavBar from "./layouts/NavBar";
 import Footer from "./layouts/Footer";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import AppContainer from "./layouts/AppContainer";
+import { ThemeProvider } from "./layouts/ThemeProvider";
 
 const Layout = () => {
     return (
-        <AppContainer>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <NavBar />
             <Outlet />
             <Footer />
-        </AppContainer>
+        </ThemeProvider>
     );
 };
 

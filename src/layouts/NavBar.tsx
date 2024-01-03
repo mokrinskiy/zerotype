@@ -1,5 +1,6 @@
+import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { Moon, Settings, User } from "lucide-react";
+import { Settings, User } from "lucide-react";
 import React from "react";
 
 const NavBar: React.FC = () => {
@@ -12,12 +13,10 @@ const NavBar: React.FC = () => {
                     <p>Settings</p>
                 </Button>
             </div>
-            <h1 className="text-4xl font-bold">zerotype</h1>
+            <h1 className="text-4xl font-bold max-md:text-2xl">zerotype</h1>
             <div className="flex space-x-2 max-md:hidden">
                 <Button size="icon">ENG</Button>
-                <Button size="icon">
-                    <Moon />
-                </Button>
+                <ThemeToggle />
                 <Button size="icon">
                     <User />
                 </Button>
