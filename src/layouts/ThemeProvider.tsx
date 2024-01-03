@@ -1,21 +1,35 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light" | "system";
+type Theme = "dark" | "light" | "system" | "red-dark";
+type Style =
+    | "slate"
+    | "red"
+    | "rose"
+    | "orange"
+    | "green"
+    | "blue"
+    | "yellow"
+    | "violet";
 
 type ThemeProviderProps = {
     children: React.ReactNode;
     defaultTheme?: Theme;
+    defaultStyle?: Style;
     storageKey?: string;
 };
 
 type ThemeProviderState = {
     theme: Theme;
+    style: Style;
     setTheme: (theme: Theme) => void;
+    setStyle: (style: Style) => void;
 };
 
 const initialState: ThemeProviderState = {
     theme: "system",
+    style: "slate",
     setTheme: () => null,
+    setStyle: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
@@ -23,37 +37,46 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
     children,
     defaultTheme = "system",
+    defaultStyle = "slate",
     storageKey = "vite-ui-theme",
     ...props
 }: ThemeProviderProps) {
     const [theme, setTheme] = useState<Theme>(
         () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
     );
+    const [style, setStyle] = useState<Style>(
+        () => (localStorage.getItem("vite-ui-style") as Style) || defaultStyle
+    );
 
     useEffect(() => {
         const root = window.document.documentElement;
 
+        root.classList.remove(
+            "slate",
+            "red",
+            "rose",
+            "orange",
+            "green",
+            "blue",
+            "yellow",
+            "violet"
+        );
+        root.classList.add(style);
+
         root.classList.remove("light", "dark");
-
-        if (theme === "system") {
-            const systemTheme = window.matchMedia(
-                "(prefers-color-scheme: dark)"
-            ).matches
-                ? "dark"
-                : "light";
-
-            root.classList.add(systemTheme);
-            return;
-        }
-
         root.classList.add(theme);
-    }, [theme]);
+    }, [theme, style]);
 
     const value = {
         theme,
-        setTheme: (theme: Theme) => {
-            localStorage.setItem(storageKey, theme);
-            setTheme(theme);
+        style,
+        setTheme: (newTheme: Theme) => {
+            localStorage.setItem(storageKey, newTheme);
+            setTheme(newTheme);
+        },
+        setStyle: (newStyle: Style) => {
+            localStorage.setItem("vite-ui-style", newStyle);
+            setStyle(newStyle);
         },
     };
 

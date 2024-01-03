@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/ThemeToggle";
+import ModeToggle from "@/components/theme/ModeToggle";
 import { Button } from "@/components/ui/button";
 import { Settings, User } from "lucide-react";
 import React from "react";
@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
             <h1 className="text-4xl font-bold max-md:text-2xl">zerotype</h1>
             <div className="flex space-x-2 max-md:hidden">
                 <Button size="icon">ENG</Button>
-                <ThemeToggle />
+                <ModeToggle />
                 <Button size="icon">
                     <User />
                 </Button>
