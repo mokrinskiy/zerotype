@@ -3,15 +3,14 @@ import NavBar from "./layouts/NavBar";
 import Footer from "./layouts/Footer";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import { ThemeProvider } from "./layouts/ThemeProvider";
 
 const Layout = () => {
     return (
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <div className="flex flex-col items-center justify-center h-screen">
             <NavBar />
             <Outlet />
             <Footer />
-        </ThemeProvider>
+        </div>
     );
 };
 

@@ -82,7 +82,7 @@ export function ThemeProvider({
 
     return (
         <ThemeProviderContext.Provider {...props} value={value}>
-            <div className="px-4">{children}</div>
+            {children}
         </ThemeProviderContext.Provider>
     );
 }

@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="flex justify-between items-center p-5">
+        <footer className="flex justify-between items-center p-5 w-full">
             {/* logo */}
             <h1 className="text-xl font-bold">zerotype</h1>
             {/* social */}
