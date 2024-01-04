@@ -4,22 +4,25 @@ import React from "react";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="flex justify-between items-center p-5 w-full">
+        <footer className="flex justify-between items-center p-5 w-full fixed bottom-0">
             {/* logo */}
-            <h1 className="text-xl font-bold">zerotype</h1>
+            <div className="text-xl font-bold flex items-center space-x-2">
+                <img className="w-5" src="/logo.svg" />
+                <h1 className="text-sm font-bold">zerotype @2024</h1>
+            </div>
             {/* social */}
-            <div className="max-md:flex-col flex items-start">
-                <Button variant="link" className="space-x-1">
-                    <Send />
-                    <p>Telegram</p>
+            <div className="flex items-start mr-9 max-md:space-x-2">
+                <Button variant="link" className="space-x-1 max-md:p-1">
+                    <Send className="max-md:w-5" />
+                    <p className="max-md:hidden">Telegram</p>
                 </Button>
-                <Button variant="link" className="space-x-1">
-                    <Instagram />
-                    <p>Instagram</p>
+                <Button variant="link" className="space-x-1 max-md:p-1">
+                    <Instagram className="max-md:w-5" />
+                    <p className="max-md:hidden">Instagram</p>
                 </Button>
-                <Button variant="link" className="space-x-1">
-                    <Github />
-                    <p>GitHub</p>
+                <Button variant="link" className="space-x-1 max-md:p-1">
+                    <Github className="max-md:w-5" />
+                    <p className="max-md:hidden">GitHub</p>
                 </Button>
             </div>
         </footer>

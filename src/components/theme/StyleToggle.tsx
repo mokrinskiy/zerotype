@@ -19,12 +19,15 @@ const StyleToggle: React.FC = () => {
             <DropdownMenuTrigger asChild>
                 <Button size="icon">
                     <Palette />
-                    <span className="sr-only">Toggle style</span>
+                    <p className="sr-only">Toggle style</p>
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 {theme_styles.map((style: any) => (
-                    <DropdownMenuItem onClick={() => setStyle(style)}>
+                    <DropdownMenuItem
+                        key={style}
+                        onClick={() => setStyle(style)}
+                    >
                         {style}
                     </DropdownMenuItem>
                 ))}

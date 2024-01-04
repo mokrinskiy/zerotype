@@ -6,7 +6,7 @@ import React from "react";
 
 const NavBar: React.FC = () => {
     return (
-        <header className="p-5 h-[120px] max-md:h-[80px] flex justify-around items-center max-md:justify-between w-full">
+        <header className="p-5 h-[120px] max-md:h-[80px] flex justify-around items-center max-md:justify-between w-full fixed top-0">
             {/* pc nav */}
             <div className="max-md:hidden">
                 <SettingsMenu />
@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
                 </Button>
             </div>
             {/* mobile nav */}
-            <div className="md:hidden space-x-2">
+            <div className="md:hidden flex space-x-2 mr-8">
                 <SettingsMenu />
                 <Button size="icon">
                     <User />

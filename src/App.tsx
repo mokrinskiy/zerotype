@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 
 const Layout = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="px-4">
             <NavBar />
             <Outlet />
             <Footer />
