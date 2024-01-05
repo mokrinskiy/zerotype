@@ -6,7 +6,7 @@ const useCountdown = (seconds: number) => {
     const hasTimerEnded = timeLeft <= 0;
     const isRunning = intervalRef.current != null;
 
-    const startCountdown = useCallback(() => {
+    const startCountdown: any = useCallback(() => {
         if (!hasTimerEnded && !isRunning) {
             intervalRef.current = setInterval(() => {
                 setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
@@ -14,7 +14,7 @@ const useCountdown = (seconds: number) => {
         }
     }, [setTimeLeft, hasTimerEnded, isRunning]);
 
-    const resetCountdown = useCallback(() => {
+    const resetCountdown: any = useCallback(() => {
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
         setTimeLeft(seconds);

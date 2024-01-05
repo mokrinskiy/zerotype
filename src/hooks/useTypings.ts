@@ -20,6 +20,7 @@ const useTypings = (enabled: boolean) => {
                     totalTyped.current -= 1;
                     break;
                 default:
+                    console.log("дуееук");
                     setTyped((prev) => prev.concat(key));
                     setCursor((cursor) => cursor + 1);
                     totalTyped.current += 1;

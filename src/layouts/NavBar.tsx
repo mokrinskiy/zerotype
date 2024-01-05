@@ -11,7 +11,7 @@ const NavBar: React.FC = () => {
             <div className="max-md:hidden">
                 <SettingsMenu />
             </div>
-            <h1 className="text-4xl font-bold max-md:text-2xl">zerotype</h1>
+            <h1 className="text-2xl font-bold max-md:text-2xl">zerotype</h1>
             <div className="flex space-x-2 max-md:hidden">
                 <Button size="icon">ENG</Button>
                 <ModeToggle />

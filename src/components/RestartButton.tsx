@@ -1,16 +1,22 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Button } from "./ui/button";
 import { RotateCcw } from "lucide-react";
 
-const RestartButton: React.FC = () => {
+const RestartButton = ({ onRestart: handleRestart }: { onRestart: any }) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     const handleClick = () => {
-        buttonRef.current?.blur;
-        // handlerestart()
+        buttonRef.current?.blur();
+        handleRestart();
     };
     return (
-        <Button onClick={handleClick} ref={buttonRef} variant="ghost">
+        <Button
+            tabIndex={-1}
+            ref={buttonRef}
+            variant="ghost"
+            className="block rounded px-8 py-2 hover:bg-slate-700/50"
+            onClick={handleClick}
+        >
             <RotateCcw />
         </Button>
     );
