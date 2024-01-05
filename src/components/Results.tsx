@@ -41,6 +41,7 @@ const Results = ({
                     <div className="h-[300px]">
                         <div>Errors: {errors}</div>
                         <div>AC: {accuracyPercentage}</div>
+                        <div>Total: {total}</div>
                     </div>
                     <DrawerFooter>
                         <Button>Submit</Button>
