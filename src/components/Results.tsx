@@ -39,7 +39,8 @@ const Results = ({
                         </DrawerDescription>
                     </DrawerHeader>
                     <div className="h-[300px]">
-                        {state} {errors} {accuracyPercentage} {total}
+                        <div>Errors: {errors}</div>
+                        <div>AC: {accuracyPercentage}</div>
                     </div>
                     <DrawerFooter>
                         <Button>Submit</Button>

@@ -6,6 +6,9 @@ const RestartButton = ({ onRestart: handleRestart }: { onRestart: any }) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     const handleClick = () => {
+        if (buttonRef.current) {
+            buttonRef.current.focus();
+        }
         buttonRef.current?.blur();
         handleRestart();
     };
